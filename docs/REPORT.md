@@ -1,8 +1,5 @@
 # BirdClef 2022: An Audio Classification Odyssey
 
-Daniel Kim
-Jonathan Tan
-
 ## Abstract and Introduction
 
 Our challenge was to take audio recordings of various bird species and classify them according to features we extracted from the data. This ability is particularly useful to conservationists because it allows them to identify and track species in any given area much more easily than traditional visual based methods. Setting up a field microphone and pressing 'record' is much more labor efficient than lugging people and equipment around trying to get a visual on the species in question.
@@ -49,10 +46,7 @@ Preprocessing data and augmentation was done in 6 steps as follows upon dataload
 1.  Ensure all audio files were stereo audio files. Some of the files were given as mono, so when passed into the utility function we made them stereo by duplicating the existing audio into the second channel  
 
 2.  Pad or truncate each audio file so they are the same length  
-
-3.  We augmented this data by shifting each truncated file by a random time unit. Audio was wrapped around when moved.  
-
-4.  We then used the audio data to create Mel-Spectrograms from the given audio data  
+3.  We then used the audio data to create Mel-Spectrograms from the given audio data  
 
 We further augmented our data by introducing random time and fequency blockouts to increase the variability of our data
 

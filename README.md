@@ -52,14 +52,12 @@ Cornell Lab of Ornithology has prepared sample data in the kaggle competition kn
 
 **What method or algorithm are you proposing? If there are existing implementations, will you use them and how? How do you plan to improve or modify such implementations? You don’t have to have an exact answer at this point, but you should have a general sense of how you will approach the problem you are working on.**
 
-Currently, we are interested in exploring ensemble learning and techniques to train the model.
+We are interested in implementing the convolutional neural network known as VGG19.  VGG19 is a convolutional network architecture that was designed for an image recognition competition.
+
+We intend to convert the training data for birdsongs into spectrograms and train a VGG19 structured network to recognize patterns amongst the spectrograms.  We will also implement JAX and FLAX (linen) functions to accelerate the transformations and data loading requirements of such a task.
 
 **How will you evaluate your results? Qualitatively, what kind of results do you expect (e.g. plots or figures)? Quantitatively, what kind of analysis will you use to evaluate and/or compare your results (e.g. what performance metrics or statistical tests)?**
 
-Results will be evaluated through the kaggle competition’s chosen metric. In BirdClef 2022, the metric is an F-score metric that will compare the model’s ability to correctly determine specified calls within the soundscape samples.  
-  
-The traditional F-measure or balanced F-score (F1 score) is the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean#Harmonic_mean_of_two_numbers) of precision and recall.
+Results will be evaluated through charting the accuracy of our neural network as it progresses through its epochs.  Qualitatively, we intend to plot a graph comparing accuracy vs. epoch.
 
-![{\displaystyle F_{1}={\frac {2}{\mathrm {recall^{-1}} +\mathrm {precision^{-1}} }}=2\cdot {\frac {\mathrm {precision} \cdot \mathrm {recall} }{\mathrm {precision} +\mathrm {recall} }}={\frac {\mathrm {tp} }{\mathrm {tp} +{\frac {1}{2}}(\mathrm {fp} +\mathrm {fn} )}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/4179c69cf1dde8418c4593177521847e862e7df8).
-
-
+As for performance metrics, accuracy will be calculated by a mean score using the JAX library.
